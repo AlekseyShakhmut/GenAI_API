@@ -18,7 +18,9 @@ jobs:
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
     - name: Run Playwright tests
-      run: npx playwright test --grep @negative # временно запускаем только негативные тесты из-за отсутствия API quota
+      run: npx playwright test --grep @negative # временно запускаем только негативные тесты
+      env:
+        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
