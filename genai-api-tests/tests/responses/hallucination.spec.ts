@@ -10,11 +10,8 @@ test('should not hallucinate on unknown fact', async ({ apiAuth }) => {
     );
 
     expect(response.status()).toBe(200);
-
     const body = await response.json();
-    
     expect(body.error).toBeUndefined();
-
     const text = extractText(body);
 
     const safeAnswers = [
