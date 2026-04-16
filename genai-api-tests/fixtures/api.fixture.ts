@@ -1,4 +1,4 @@
-import { test as base, APIRequestContext, request as playwrightRequest } from '@playwright/test';
+import { test as base, APIRequestContext, request as apiRequest } from '@playwright/test';
 import { config } from '../config/env';
 
 type AuthFixtures = {
@@ -9,7 +9,7 @@ type AuthFixtures = {
 
 export const test = base.extend<AuthFixtures>({
     apiAuth: async ({}, use) => {
-        const context = await playwrightRequest.newContext({
+        const context = await apiRequest.newContext({
             baseURL: config.baseURL,
             extraHTTPHeaders: {
                 Authorization: `Bearer ${config.apiKey}`,
@@ -22,7 +22,7 @@ export const test = base.extend<AuthFixtures>({
     },
 
      apiInvalidAuth: async ({}, use) => {
-        const context = await playwrightRequest.newContext({
+        const context = await apiRequest.newContext({
             baseURL: config.baseURL,
             extraHTTPHeaders: {
                 Authorization: `Bearer ${config.invalidApiKey}`,
@@ -35,7 +35,7 @@ export const test = base.extend<AuthFixtures>({
         },
 
     apiWithoutAuth: async ({}, use) => {
-        const context = await playwrightRequest.newContext({
+        const context = await apiRequest.newContext({
             baseURL: config.baseURL,
         });
 

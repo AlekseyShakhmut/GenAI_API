@@ -5,9 +5,7 @@ import { extractText, containsAny } from '../../utils/llm.assertions';
 test('should not hallucinate on unknown fact', async ({ apiAuth }) => {
     const client = new OpenAIClient(apiAuth);
 
-    const response = await client.createResponse(
-        'Кто был президентом Марса в 2020 году?'
-    );
+    const response = await client.createResponse('Кто был президентом Марса в 2020 году?');
 
     expect(response.status()).toBe(200);
     const body = await response.json();
