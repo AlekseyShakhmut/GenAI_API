@@ -1,7 +1,7 @@
 import { test, expect } from '../../fixtures/api.fixture';
 import { OpenAIClient } from '../../clients/openai.client';
 
-test('should produce different outputs with high temperature', async ({ apiAuth }) => {
+test('Проверяем, что модель даёт разные ответы при повышенной температуре', async ({ apiAuth }) => {
     const client = new OpenAIClient(apiAuth);
 
     const r1 = await client.createResponse('Tell a joke', { temperature: 1 });

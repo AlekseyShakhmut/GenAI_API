@@ -2,7 +2,7 @@ import { test, expect } from '../../fixtures/api.fixture';
 import { OpenAIClient } from '../../clients/openai.client';
 import { extractText, containsAny } from '../../utils/llm.assertions';
 
-test('should not hallucinate on unknown fact', async ({ apiAuth }) => {
+test('Галлюцинация, проверяем, что модель не выдумывает факты', async ({ apiAuth }) => {
     const client = new OpenAIClient(apiAuth);
 
     const response = await client.createResponse('Кто был президентом Марса в 2020 году?');

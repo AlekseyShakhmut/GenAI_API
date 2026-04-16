@@ -1,4 +1,4 @@
-import { test as base, APIRequestContext, request as apiRequest } from '@playwright/test';
+import { test as base, type APIRequestContext, request as apiRequest } from '@playwright/test';
 import { config } from '../config/env';
 
 type AuthFixtures = {

@@ -2,7 +2,7 @@ import { test, expect } from '../../fixtures/api.fixture';
 import { OpenAIClient } from '../../clients/openai.client';
 import { extractText, containsAny } from '../../utils/llm.assertions';
 
-test('should provide meaningful answer about API testing', async ({ apiAuth }) => {
+test('Проверка на качество ответа (длина, ключевые слова)', async ({ apiAuth }) => {
     const client = new OpenAIClient(apiAuth);
 
     const response = await client.createResponse('Что такое API тестирование? Объясни кратко');
