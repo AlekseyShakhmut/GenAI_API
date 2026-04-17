@@ -13,10 +13,10 @@ export class OpenAIClient {
          this.request = request;
     }
 
-    async createResponse(input: string, options?: Partial<ResponseOptions>) {
+    async createResponse(input: string, options: Partial<ResponseOptions> = {}) {
         return await this.request.post('responses', {
             data: {
-                model: options?.model || 'gpt-4.1',
+                model: options.model || 'gpt-4.1',
                 input,
                 ...options,
             },
