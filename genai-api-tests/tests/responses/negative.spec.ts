@@ -87,7 +87,7 @@ test('POST /responses - без авторизации - возвращает 401
         expect(body.error).toBeDefined();
         expect(body.error.message).toContain("One of \"input\" or \"previous_response_id\"or 'prompt'or 'conversation_id' must be provided.")
     });
-    test.skip('POST /responses - превышена квота (недостаточно токенов) - возвращает 429', { tag: '@negative' }, async ({ apiAuth }) => {
+    test('POST /responses - превышена квота (недостаточно токенов) - возвращает 429', { tag: '@negative' }, async ({ apiAuth }) => {
         const res = await apiAuth.post('responses', {
             data: {
                 model: 'gpt-4.1',
