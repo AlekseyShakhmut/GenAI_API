@@ -1,7 +1,7 @@
 import { APIRequestContext } from '@playwright/test';
 
 export type ResponseOptions = {
-    model?: string;
+    model: string;
     temperature?: number;
     max_tokens?: number;
 };

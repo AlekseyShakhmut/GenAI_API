@@ -20,7 +20,7 @@ export default defineConfig({
     ['list']
   ],
   use: {
-    baseURL: process.env.API_BASE_URL || 'https://api.openai.com/v1/',
+    // baseURL: process.env.API_BASE_URL || 'https://api.openai.com/v1/',
     trace: 'retain-on-failure',
     extraHTTPHeaders: {
       'accept': 'application/json',
