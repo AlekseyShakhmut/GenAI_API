@@ -3,5 +3,5 @@ export function extractText(body: any): string {
 }
 
 export function containsAny(text: string, keywords: string[]): boolean {
-    return keywords.some(k => text.toLowerCase().includes(k.toLowerCase()));
+    return keywords.some(keyword => text.toLowerCase().includes(keyword.toLowerCase()));
 }
