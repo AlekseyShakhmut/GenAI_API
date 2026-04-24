@@ -5,7 +5,7 @@ import 'dotenv/config';
 dotenv.config({ debug: false, quiet: true });
 
 export default defineConfig({
-  testDir: 'genai-api-tests/tests/responses',
+  testDir: 'genai-api-tests/tests',
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,

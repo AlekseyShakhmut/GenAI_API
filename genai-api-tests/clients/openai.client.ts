@@ -7,11 +7,7 @@ export type ResponseOptions = {
 };
 
 export class OpenAIClient {
-     request: APIRequestContext
-
-    constructor(request: APIRequestContext) {
-         this.request = request;
-    }
+    constructor (private request: APIRequestContext) {}
 
     async createResponse(input: string, options: Partial<ResponseOptions> = {}) {
         return await this.request.post('responses', {
