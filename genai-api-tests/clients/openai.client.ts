@@ -1,10 +1,5 @@
 import { APIRequestContext } from '@playwright/test';
-
-export type ResponseOptions = {
-    model: string;
-    temperature?: number;
-    max_tokens?: number;
-};
+import {ResponseOptions} from "../types/openai.types";
 
 export class OpenAIClient {
     constructor (private request: APIRequestContext) {}
